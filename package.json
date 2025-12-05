@@ -1,0 +1,30 @@
+{
+  "name": "speech",
+  "version": "1.0.0",
+  "description": "SpeechPundit Test Automation with Playwright and Cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cucumber-js",
+    "test:registration": "npx cucumber-js tests/features/registration.feature --require tests/steps/registrationSteps.js --require tests/support/world.js --require tests/support/hooks.js",
+    "test:headless": "set HEADLESS=true && npx cucumber-js tests/features/registration.feature --require tests/steps/registrationSteps.js --require tests/support/world.js --require tests/support/hooks.js",
+    "test:positive": "npx cucumber-js tests/features/registration.feature --tags @positive --require tests/steps/registrationSteps.js --require tests/support/world.js --require tests/support/hooks.js",
+    "test:student": "npx cucumber-js tests/features/registration.feature --tags @student --require tests/steps/registrationSteps.js --require tests/support/world.js --require tests/support/hooks.js",
+    "test:validation": "npx cucumber-js tests/features/registration.feature --tags @validation --require tests/steps/registrationSteps.js --require tests/support/world.js --require tests/support/hooks.js",
+    "test:required-fields": "npx cucumber-js tests/features/registration.feature --tags \"@validation and @required-fields\" --require tests/steps/registrationSteps.js --require tests/support/world.js --require tests/support/hooks.js",
+    "test:ui": "npx cucumber-js tests/features/registration.feature --tags @ui --require tests/steps/registrationSteps.js --require tests/support/world.js --require tests/support/hooks.js",
+    "test:negative": "npx cucumber-js tests/features/registration.feature --tags @negative --require tests/steps/registrationSteps.js --require tests/support/world.js --require tests/support/hooks.js",
+    "test:boundary": "npx cucumber-js tests/features/registration.feature --tags @boundary --require tests/steps/registrationSteps.js --require tests/support/world.js --require tests/support/hooks.js",
+    "test:cross-browser": "npx cucumber-js tests/features/registration.feature --tags @cross-browser --require tests/steps/registrationSteps.js --require tests/support/world.js --require tests/support/hooks.js",
+    "install:browsers": "npx playwright install"
+  },
+  "keywords": ["playwright", "cucumber", "automation", "testing"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1",
+    "@cucumber/cucumber": "^10.3.1",
+    "playwright": "^1.57.0",
+    "cucumber-html-reporter": "^7.1.1"
+  }
+}
